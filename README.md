@@ -1,58 +1,111 @@
 # Emergent Phase Dynamics in Reinforcement Learning
-> A Python framework exploring multi-attractor phase dynamics in counter-rotating oscillators under policy gradient optimization.
 
-## Overview
-This repository demonstrates **emergent, unpinned phase dynamics** in a dual CW/CCW discrete-continuous RL environment. The system uses learnable phase velocity and amplitude parameters to explore quasi-periodic and itinerant phase behavior without enforcing explicit phase locking.
+A research‐oriented Python framework for exploring **emergent phase dynamics** in a dual CW/CCW oscillator
+environment under Reinforcement Learning, exhibiting multi‐attractor and itinerant behavior without explicit phase pinning.
 
-The framework consists of four main modules:
-1. **advanced_double_helix_tuner.py** – Core RL agent trainer with dual oscillators.
-2. **bifurcation_enhanced_v2.py** – Enhanced bifurcation environment with reward shaping, entropy control, and phase variance monitoring.
-3. **phase_bifurcation_analyzer.py** – Analytical tools to evaluate phase differences, variance, and emergent attractors.
-4. **live_phase_demo.py** – Real-time visualization of phase evolution, including static and dynamic charts, polar plots, and reward monitoring.
+This repository is designed for **reproducible experimentation** and includes full visualization and analysis tooling.
 
 ---
 
-## Features
-- Dual CW/CCW agent controlling 64×64 discrete state space
-- Learnable phase parameters: velocity & amplitude
-- Entropy-driven exploration to prevent mode collapse
-- Emergent itinerant phase dynamics without hard-coded targets
-- Real-time visualizations and static analytics
-- Cross-platform CPU and GPU support (tested on PyTorch, OpenCL-friendly)
+## 🔍 Project Overview
+
+Traditional RL systems often converge prematurely or exhibit mode collapse.  
+Here we investigate **phase‐based dynamics**, where:
+
+- Phase parameters are **learnable**
+- Phase differences **do not lock** to fixed targets
+- Phase evolution exhibits **quasi‐periodic and multi‐attractor behavior**
+- No forced or hand‐coded phase constraints
+
+This framework works on **CPUs and GPUs (NVIDIA/AMD)** and does **not rely on closed, vendor‐locked ecosystems**.
 
 ---
 
-## Installation
+## 🧩 Repository Structure
+
+| File | Description |
+|------|-------------|
+| `advanced_double_helix_tuner.py` | Core phase training module (episodic RL with phase coupling) |
+| `bifurcation_enhanced_v2.py` | Enhanced model generation with bifurcation control |
+| `phase_bifurcation_analyzer.py` | Static & dynamic analysis + report generation |
+| `live_phase_demo.py` | Animation generator to visualize phase evolution |
+
+---
+
+## 🚀 Quick Start
+
+Install dependencies:
+
 ```bash
-git clone https://github.com/yourusername/emergent-phase-rl.git
-cd emergent-phase-rl
-python -m venv .venv
-.venv\Scripts\activate      # Windows
+python3 -m venv .venv
+source .venv/bin/activate      # Linux / macOS
+.venv\Scripts\activate         # Windows
+
 pip install -r requirements.txt
-
-
-Usage
-Training
+Run Training
+bash
+複製程式碼
 python bifurcation_enhanced_v2.py
+📊 Visualization & Analysis
+Generate the full analysis report and figures:
 
-Real-time Phase Demo
-python live_phase_demo.py --frames 300 --save phase_animation.gif
-
-Analysis
+bash
+複製程式碼
 python phase_bifurcation_analyzer.py
+Expected output:
 
-Results
+css
+複製程式碼
+Phase bifurcation diagram saved to phase_bifurcation.png
+Ripple dynamics plot saved to ripple_dynamics.png
+Parameter impact analysis saved to parameter_impact.png
+Phase portrait saved to phase_portrait.png
+...
+This will produce:
 
-Average phase difference: ~1.6–2.0 rad, no π-locking
+phase_bifurcation.png (phase time series)
 
-High state diversity (~70–99% unique CW/CCW pairs)
+ripple_dynamics.png (ripple & FFT)
 
-Emergent multi-attractor dynamics
+parameter_impact.png (parameter influence)
 
-GPU-friendly (tested on CPU first; AMD ROCm & NVIDIA possible)
+phase_portrait.png (phase portraits, return map, chaos indicators)
 
-Citation
+🧪 Live Demo
+Display real‐time evolution (optional):
 
-If you use this repository, please cite as:
+bash
+複製程式碼
+python live_phase_demo.py
+Save animations:
 
-Yufan (2026). Emergent Multi-Attractor Phase Dynamics in Reinforcement Learning-Controlled Counter-Rotating Os
+bash
+
+python live_phase_demo.py --frames 300 --save phase_animation.gif
+📈 Results Summary (Example)
+yaml
+
+Basic Statistics:
+  Trajectory length: 1000 steps
+  Mean phase diff:     1.8813 rad
+  Phase diff std dev:  0.4454 rad
+
+Learned Parameters:
+  phase_velocity: 0.4951
+  phase_amplitude: 0.9954
+
+Exploration Performance:
+  Mean diversity: 0.8824
+  Unique pairs:   807
+🧠 Key Concepts
+Emergent Phase Dynamics
+Phase differences evolve without explicit pinning or loss functions.
+
+Multi‑Attractor Behavior
+The system exhibits multiple attractors and controlled bifurcation exploration.
+
+Hardware Agnostic
+Works on CPU & GPU, without fixing to a specific vendor stack.
+
+📌 License
+MIT © 2026 RetryixAGI
