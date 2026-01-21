@@ -36,26 +36,19 @@ This framework works on **CPUs and GPUs (NVIDIA/AMD)** and does **not rely on cl
 
 Install dependencies:
 
-```bash
 python3 -m venv .venv
-source .venv/bin/activate      # Linux / macOS
 .venv\Scripts\activate         # Windows
 
 pip install -r requirements.txt
 Run Training
-bash
-複製程式碼
+
 python bifurcation_enhanced_v2.py
 📊 Visualization & Analysis
 Generate the full analysis report and figures:
 
-bash
-複製程式碼
 python phase_bifurcation_analyzer.py
 Expected output:
 
-css
-複製程式碼
 Phase bifurcation diagram saved to phase_bifurcation.png
 Ripple dynamics plot saved to ripple_dynamics.png
 Parameter impact analysis saved to parameter_impact.png
@@ -74,12 +67,8 @@ phase_portrait.png (phase portraits, return map, chaos indicators)
 🧪 Live Demo
 Display real‐time evolution (optional):
 
-bash
-複製程式碼
 python live_phase_demo.py
 Save animations:
-
-bash
 
 python live_phase_demo.py --frames 300 --save phase_animation.gif
 📈 Results Summary (Example)
